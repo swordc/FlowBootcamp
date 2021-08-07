@@ -17,23 +17,6 @@ pub struct Canvas {
   }
 }
 
-pub fun serializeStringArray(_ lines: [String]): String {
-  var buffer = ""
-  for line in lines {
-    buffer = buffer.concat(line)
-  }
-
-  return buffer
-}
-
-pub resource Picture {
-
-  pub let canvas: Canvas
-  
-  init(canvas: Canvas) {
-    self.canvas = canvas
-  }
-}
 
 pub fun display(canvas: Canvas)
 {
@@ -67,6 +50,25 @@ pub fun display(canvas: Canvas)
     
     log(line)
     h = h + 1
+  }
+}
+
+
+pub fun serializeStringArray(_ lines: [String]): String {
+  var buffer = ""
+  for line in lines {
+    buffer = buffer.concat(line)
+  }
+
+  return buffer
+}
+
+pub resource Picture {
+
+  pub let canvas: Canvas
+  
+  init(canvas: Canvas) {
+    self.canvas = canvas
   }
 }
 
